@@ -23,6 +23,10 @@ android {
 
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -56,4 +60,9 @@ dependencies {
     implementation(libs.room.ktx)
     // Process Room annotations with KSP
     ksp(libs.room.compiler)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    // For Activities
+    implementation(libs.androidx.activity.ktx.v193)
+    // For Jetpack Compose (if applicable)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
